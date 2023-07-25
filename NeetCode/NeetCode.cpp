@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include "Valid_anagram.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string s1 = "Anagram";
+    string s2 = "mragnaa";
+
+    clock_t start = clock();
+    for (int i = 0; i < 1000000; i++) {
+        valid_anagram(s1, s2);
+    }
+    cout << "Execution time = " << (double)(double(clock() - start) / CLOCKS_PER_SEC) << "s" << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
