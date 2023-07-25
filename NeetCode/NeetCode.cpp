@@ -2,10 +2,16 @@
 //
 
 #include <iostream>
+#include "Contains_duplicates.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    clock_t start = clock();
+    for (int i = 0; i < 1000000; i++) {
+        vector<int> vec{5, 6, 4, 3, 2, 1, 5};
+        contains_duplicates(vec);
+    }
+    cout << "Excecution time = " << (double)(double(clock() - start) / CLOCKS_PER_SEC) << "s" << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
