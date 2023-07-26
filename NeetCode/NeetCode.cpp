@@ -2,10 +2,22 @@
 //
 
 #include <iostream>
+#include "Group_anagrams.h"
+#include <string>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	vector<string> vec{ "eat","tea","tan","ate","nat","bat" };
+	vector<vector<string>> result(vec.size(), vector<string>(0));
+	group_anagrams(vec, result);
+	for (vector<string> v : result) {
+		cout << "Vector = ";
+		for (string s : v) {
+			cout << s << " ";
+		}
+		cout << endl;
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
