@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include "Two_sum.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int n = 4;
+    int arr[] = { 2, 7, 11, 15 };
+    int result[2]{ 0 };
+    clock_t start = clock();
+    for (int i = 0; i < 1000000; i++) {
+        two_sum(arr, n, 17, result);
+    }
+    cout << "Execution time = " << (double)((double)(clock() - start) / CLOCKS_PER_SEC) << "s";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
