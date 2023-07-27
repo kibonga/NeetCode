@@ -2,10 +2,20 @@
 //
 
 #include <iostream>
+#include "Top_k_frequent_elements.h"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int k = 2;
+    vector<int> result;
+    vector<int> vec{ 1, 1, 1, 2, 2, 1, 3, 4, 4, 4, 4, 4, 4 };
+    top_k_freq_elems(vec, 2, result);
+
+    cout << "Most freq = ";
+    for (auto r : result) {
+        cout << r << " ";
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
