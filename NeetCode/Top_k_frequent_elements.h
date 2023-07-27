@@ -8,8 +8,8 @@ void top_k_freq_elems(vector<int> &vec, int k, vector<int> &result) {
 	vector<vector<int>> freq(vec.size(), vector<int>());
 	int n = vec.size();
 
-	for (int i = 0; i < n; i++) {
-		map[vec[i]] += 1;
+	for (const auto v : vec) {
+		map[v] += 1;
 	}
 
 	for (const auto m : map) {
@@ -20,8 +20,8 @@ void top_k_freq_elems(vector<int> &vec, int k, vector<int> &result) {
 	for (int i = n - 1; i >= 0; i--) {
 		if (result.size() >= k) return;
 		int s = freq[i].size();
-		for (int j = 0; j < freq[i].size(); j++) {
-			result.push_back(freq[i][j]);
+		for (const auto f : freq[i]) {
+			result.push_back(f);
 		}
 	}
 }
