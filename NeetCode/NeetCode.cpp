@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include "Longest_consecutive_sequence.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> vec = { 102, 100, 101, 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
+    int longest = longest_consecutive_sequence(vec);
+
+    cout << "The longest sequence = " << longest;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
