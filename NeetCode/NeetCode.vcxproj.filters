@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Contains_duplicates.h">
+    <ClInclude Include="Valid_palindrome.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
