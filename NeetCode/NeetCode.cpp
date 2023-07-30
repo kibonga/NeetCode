@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include "Container_with_most_water.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> vec = { 1,8,6,2,5,4,8,3,7 };
+    int result = container_with_most_water(vec);
+
+    cout << "Max area = " << result;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
