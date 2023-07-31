@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include "Longest_substring_without_repeating_characters.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string str = "pwwkew";
+    int result = longest_non_repeating_substring(str);
+
+    cout << "Longest non duplicate substring is of length = " << result;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
