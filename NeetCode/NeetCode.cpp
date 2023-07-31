@@ -2,10 +2,15 @@
 //
 
 #include <iostream>
+#include "Longest_repeating_character_replacement.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int k = 2;
+    string str = "ABABBA";
+    int res = longest_char_replacement(str, k);
+
+    cout << "Longest repeating character length is = " << res;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
