@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Best_time_to_buy_and_sell_stock.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> stonks = { 7,6,4,3,1 };
+    int max_stonk = best_stonks(stonks);
+    cout << "Max stonk " << max_stonk << " goes brrr...";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
