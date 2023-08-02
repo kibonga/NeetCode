@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include "Top_k_frequent_elements.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int k = 3;
+    vector<int> top_k_elems(k);
+    vector<int> vec{1, 1, 1, 2, 2, 4, 7, 7, 7, 7, 6, 6, 5, 5, 5 };
+    top_k_freq_elems(vec, k, top_k_elems);
+
+    cout << "Top " << k << " elements = ";
+    for (auto k : top_k_elems) {
+        cout << k << " ";
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
