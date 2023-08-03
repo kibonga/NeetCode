@@ -2,10 +2,16 @@
 //
 
 #include <iostream>
+#include "Permutation_in_string.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string s1, s2;
+    s1 = "DIZES";
+    s2 = "OVERISZEEDROCKET";
+    int result = check_inclusion(s1, s2);
+
+    cout << "Permutation = " << result;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
