@@ -2,10 +2,23 @@
 //
 
 #include <iostream>
+#include "Encode_decode_strings.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string encoded;
+    vector<string> vec{"lint44", "code", "love", "you"};
+    encode(vec, encoded);
+
+    cout << "String = " << encoded << endl;
+
+    vector<string> result;
+    decode(encoded, result);
+
+    cout << "Decoded = ";
+    for (auto& r : result) {
+        cout << r << " ";
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
