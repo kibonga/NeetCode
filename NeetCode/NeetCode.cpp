@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Valid_palindrome.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string str = " ";
+    int is_palindrome = valid_palindrome(str);
+    cout << "Is Palindrome = " << is_palindrome;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
