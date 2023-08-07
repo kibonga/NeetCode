@@ -2,10 +2,26 @@
 //
 
 #include <iostream>
+#include "Two_sum_II_input_array_is_sorted.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int target = 17;
+    vector<int> vec{0};
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.push_back(4);
+    vec.push_back(5);
+    vec.push_back(8);
+    vec.push_back(9);
+    vec.push_back(11);
+    vec.push_back(22);
+    vec.push_back(35);
+
+
+    tuple<int, int> result = two_sum(vec, target);
+    cout << "Indices " << endl << "First = " << get<0>(result) << endl << "Second = " << get<1>(result);
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
