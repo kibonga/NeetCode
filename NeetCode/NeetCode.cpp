@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Product_of_array_except_self.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> answer(4, 1);
+    vector<int> nums{1, 2, 3, 4};
+    product_of_array_except_self(nums, answer);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
