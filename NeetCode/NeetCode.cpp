@@ -2,10 +2,21 @@
 //
 
 #include <iostream>
+#include "3Sum.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> vec = { -1,0,1,2,-1,-4 };
+    vector<vector<int>> res = three_sum(vec);
+
+    cout << "Result of 3Sum" << endl;
+    for (auto& v : res) {
+        cout << "[ ";
+        for (auto& r : v) {
+            cout << r << " ";
+        }
+        cout << "]" << endl;
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
