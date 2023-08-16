@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Valid_parentheses.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	string str = "}(({([])}))";
+	int result = valid_parentheses(str);
+	cout << "Are Parentheses valid = " << result;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
