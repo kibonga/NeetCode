@@ -2,10 +2,22 @@
 //
 
 #include <iostream>
+#include "Min_stack.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	MinStack min_stack = MinStack();
+	min_stack.push_min(-2);
+	min_stack.push_min(0);
+	min_stack.push_min(-3);
+	min_stack.push_min(4);
+	min_stack.push_min(1);
+
+	min_stack.pop_min();
+	min_stack.pop_min();
+	min_stack.pop_min();
+	min_stack.pop_min();
+	cout << "Min stack value = " << min_stack.get_min();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
