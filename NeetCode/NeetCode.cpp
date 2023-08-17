@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+#include "Reverse_polish_notation.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	vector<string>tokens = { "10","6","9","3","+","-11","*","/","*","17","+","5","+" };
+	cout << "Result = " << reverse_polish_notation(tokens);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
