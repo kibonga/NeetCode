@@ -11,11 +11,11 @@ int reverse_polish_notation(vector<string> strs) {
 	if (strs.empty()) return 0;
 	for (auto s : strs) {
 		if ((s == "+") || (s == "-") || (s == "*") || (s == "/")) {
-			if (numbers.size()) {
+			if (!numbers.empty()) {
 				opr2 = numbers.top();
 				numbers.pop();
 			}
-			if (!numbers.size()) continue;
+			if (numbers.empty()) continue;
 			opr1 = numbers.top();
 			numbers.pop();
 			if (s == "+") result = opr1 + opr2;
