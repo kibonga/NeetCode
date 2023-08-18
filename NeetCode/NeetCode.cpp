@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include "Daily_temperatures.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int size = 8;
+	vector<int> temps = { 73,74,75,71,69,72,76,73 };
+	vector<int> result(size, 0);
+	daily_temperatures(temps, result);
+	cout << "Result = ";
+	for (auto r : result) {
+		cout << r << " ";
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
