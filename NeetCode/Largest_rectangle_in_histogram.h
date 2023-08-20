@@ -18,14 +18,14 @@ int largest_rectangle_area(vector<int>& heights) {
             start.push_back(0);
             continue;
         }
-        
+
         while (!stack.empty() && heights[stack.top()] >= item) {
             stack.pop();
         }
 
         if (stack.empty()) start.push_back(0);
         else start.push_back(stack.top() + 1);
-        
+
         stack.push(i);
     }
 
@@ -52,10 +52,10 @@ int largest_rectangle_area(vector<int>& heights) {
     }
 
     reverse(end.begin(), end.end());
-	
+
     int max_area = 0;
     for (int i = 0; i < n; i++) {
-        max_area = max(max_area, heights[i] * (start[i] - end[i] + 1));
+        max_area = max(max_area, heights[i] * (end[i] - start[i] + 1));
     }
 
     return max_area;
