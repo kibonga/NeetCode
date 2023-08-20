@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+#include "Largest_rectangle_in_histogram.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> vec = { 2,1,5,6,2,3 };
+    cout << "Max area = " << largest_rectangle_area(vec);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
