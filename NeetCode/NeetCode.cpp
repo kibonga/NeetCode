@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
-
+#include "Minimum_window_substring.h":
 int main()
 {
-    std::cout << "Hello World!\n";
+    string s = "ADOBECODEBANC";
+    string t = "ABC";
+
+    cout << "Result = " << minimum_window_substring(s, t);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
