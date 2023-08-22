@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+#include "Trapping_rain_water.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> vec = { 4,2,0,3,2,5 };
+    cout << "Result = " << trap(vec);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
