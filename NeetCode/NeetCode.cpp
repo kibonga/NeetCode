@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include "Sliding_window_maximum.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int k = 3;
+    vector<int> vec = {1, 3, -1, -3, 5, 3, 6, 7};
+    vector<int> result;
+    
+    result = max_sliding_window(vec, k);
+    cout << "Result = ";
+    for (int r : result) {
+        cout << r << " ";
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
