@@ -2,10 +2,15 @@
 //
 
 #include <iostream>
+#include "Car_fleet.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int dist = 12;
+    vector<int> positions = { 10,8,0,5,3 };
+    vector<int> speeds = { 2,4,1,1,3 };
+    cout << "Result = " << car_fleet(dist, positions, speeds);
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
@@ -18,3 +23,4 @@ int main()
 //   4. Use the Error List window to view errors
 //   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
 //   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
