@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include "Binary_search.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> vec = { -1,0,3,5,9,12 };
+    int target = 2;
+
+    binary_search(vec, target);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
