@@ -130,7 +130,7 @@
     <ClCompile Include="NeetCode.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Contains_duplicates.h" />
+    <ClInclude Include="Reverse_linked_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
