@@ -72,49 +72,46 @@ void LinkedList::display() {
 }
 
 void LinkedList::merge(Node *merge_head) {
-  if (head == nullptr && merge_head == nullptr) {
-    cout << "Both lists are empty" << endl;
-    return;
-  }
-
-  Node *node1 = head;
-  Node *node2 = merge_head;
-  Node *next1 = nullptr;
-  Node *next2 = nullptr;
-
-  while ((node1->next != nullptr) && (node2->next != nullptr)) {
-    if (node2->value < node1->next->value) {
-      next1 = node1->next;
-      node1->next = node2;
-      while (node2->next != nullptr && node2->next->value < next1->value) {
-        node2 = node2->next;
-      }
-      next2 = node2->next;
-      node2->next = next1;
-      node2 = next2;
-      node1 = next1;
+    if (!head && !merge_head) {
+        cout << "Both lists are empty" << endl;
+        return;
+    }
+    if (!head) {
+        cout << "List A is empty" << endl;
+        head = merge_head;
+        return;
+    }
+    if (!merge_head) {
+        cout << "List B is empty" << endl;
+        return;
+    }
+    if (merge_head == head) {
+        cout << "Both heads point to the same list" << endl;
+        return;
     }
 
-    if (node1->value < node2->next->value) {
-      next2 = node2->next;
-      node2->next = node1;
-      while (node1->next != nullptr && node1->next->value < next2->value) {
-        node1 = node1->next;
-      }
-      next1 = node1->next;
-      node1->next = next2;
-      node1 = next1;
-      node2 = next2;
+    Node* a = head;
+    Node* b = merge_head;
+    Node* prev = nullptr;
+
+    while (a && b) {
+        if (a->value < b->value) {
+            prev = a;
+            a = a->next;
+            continue;
+        }
+        if (!prev) {
+            head = b;
+        }
+        else {
+            prev->next = b;
+        }
+        prev = b;
+        b = b->next;
+        prev->next = a;
     }
-  }
 
-  if (node1->next == nullptr) {
-    node1->next = node2;
-    return;
-  }
-
-  if (node2->next == nullptr) {
-    node2->next = node1;
-    return;
-  }
+    if (b && prev) {
+        prev->next = b;
+    }
 }

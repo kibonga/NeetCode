@@ -16,7 +16,7 @@ int main() {
   linked_list2->add(4);
   linked_list2->add(6);
   linked_list2->display();
-  linked_list2->merge(linked_list->head);
+  linked_list->merge(linked_list2->head);
   linked_list->display();
 }
 

@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Contains_duplicates.h">
+    <ClInclude Include="Merge_two_sorted_lists.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
