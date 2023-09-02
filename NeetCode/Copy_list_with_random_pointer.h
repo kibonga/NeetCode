@@ -44,18 +44,20 @@ void display(ListNode *head) {
   while (curr) {
     ListNode *next = curr->next;
     ListNode *random = curr->random;
-    cout << "Node = " << curr->val << endl;
+    cout << "Node = " << curr->val << "(" << &curr << ")" << endl;
     if (next) {
-      cout << "Next = " << next->val << endl;
+      cout << "Next = " << next->val << "(" << &next << ")" << endl;
     } else {
       cout << "Next = NULL" << endl;
     }
     if (random) {
-      cout << "Random = " << random->val << endl;
+      cout << "Random = " << random->val << "(" << &random << ")" << endl;
     } else {
       cout << "Random = NULL" << endl;
     }
     curr = curr->next;
-    cout << endl << "-------" << endl;
+    if (curr) {
+      cout << endl << "-------" << endl;
+    }
   }
 }
