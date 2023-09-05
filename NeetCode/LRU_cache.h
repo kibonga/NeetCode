@@ -1,5 +1,5 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include <stdio.h>
 using namespace std;
 
@@ -7,123 +7,85 @@ struct Node {
   int val;
   Node *next;
   Node *prev;
-  Node(int x) : val(x) {}
+  Node(int x) : val(x), next(nullptr), prev(nullptr) {}
 };
 
 class LRUCache {
 public:
   int capacity;
-  int size;
   Node *head;
   Node *tail;
-  std::map<int, Node *> map;
-  LRUCache(int c) : head(nullptr), tail(nullptr), capacity(c), size(0){};
+  std::unordered_map<int, Node *> cache;
+  LRUCache(int c) : head(new Node(-1)), tail(new Node(-1)), capacity(c) {
+    head->next = tail;
+    tail->prev = head;
+  };
   int get(int key);
   void put(int key, int val);
   void display();
+  void remove(Node* node);
+  void insert(Node* node);
 };
 
 int LRUCache::get(int key) {
-  if (!head) {
-    cout << "LRU cache is empty" << endl;
-    return -1;
-  }
-  Node *node = map[key];
-  cout << "Iterate over map" << endl;
-  for (auto m : map) {
-    cout << "Key = " << m.first << " and Val = " << m.second << endl;
-  }
-  cout << endl;
-  // Node *node = map[key];
-  if (!node) {
-    cout << "There is no node with key = " << key << endl;
-    return -1;
-  }
-
-  if (head == tail) {
-    cout << "There is only one element (HEAD and TAIL are the same)" << endl;
+  if(cache.find(key) != cache.end()) {
+    Node* node = cache[key];
+    remove(node);
+    insert(node);
     return node->val;
   }
+  cout << "Could not finde key = " << key << endl;
+  return -1;
+}
 
-  if (node == head) {
-    cout << "There are multiple elements, but we are fetching HEAD" << endl;
-    return node->val;
-  }
+void LRUCache::remove(Node* node) {
+  Node* prev = node->prev;
+  Node* next = node->next;
 
-  if (node == tail) {
-    node->next = head;
-    head = node;
-    node->prev->next = nullptr;
-    tail = node->prev;
-    return node->val;
-  }
+  prev->next = next;
+  next->prev = prev;
+}
 
-  node->prev->next = node->next;
-  node->next = head;
-  head = node;
+void LRUCache::insert(Node* node) {
+  Node* next = head->next;
+  head->next = node;
 
-  return node->val;
+  node->next = next;
+  node->prev = head;
+  next->prev = node;
 }
 
 void LRUCache::put(int key, int val) {
-  Node *node = map[key];
-  if (node) {
-    node->val = val;
-    return;
+  cout << "Put = " << key << endl;
+  // can find in cache
+  if(cache.find(key) != cache.end()) {
+    Node* remove = cache[key];
+    LRUCache::remove(remove);
+    delete remove;
   }
-
-  Node *prev = nullptr;
-  Node *next = head;
-  Node *new_node = new Node(val);
-
-  if (!head && !tail) {
-    // cout << "This is INIT val = " << val << endl;
-    map[key] = new_node;
-    head = new_node;
-    tail = new_node;
-    size++;
-    return;
-  }
-
-  if (size < capacity) {
-    map[key] = new_node;
-    new_node->next = next;
-    next->prev = new_node;
-    head = new_node;
-    if (!tail) {
-      tail = head;
-      tail->next = nullptr;
-    }
-    size++;
-    return;
-  } else {
-    map.erase(tail->val);
-    node = tail;
-    tail = tail->prev;
-    delete node;
-    map[key] = new_node;
-    new_node->next = next;
-    next->prev = new_node;
-    head = new_node;
+  // cannot find in cache
+  Node* node = new Node(key);
+  cache[key] = node;
+  insert(node);
+  if(cache.size() > capacity) {
+    Node* remove = tail->prev;
+    LRUCache::remove(remove);
+    cache.erase(remove->val);
+    delete remove;
   }
 }
 
 void LRUCache::display() {
-  Node *curr = head;
-  if (!head) {
-    cout << "Head is not defined" << endl;
+  if(!head->next) {
+    cout << "Cache is empty" << endl;
     return;
   }
-  cout << "Priority (high-low) = ";
-  while (curr) {
-    cout << curr->val << " ";
-    curr = curr->next;
-  }
-  cout << endl;
-
-  cout << "Map = ";
-  for (auto &m : map) {
-    cout << m.first << " ";
+  Node* node = head->next;
+  cout << "LRU Cache = ";
+  while(node && node != tail) {
+    cout << node->val << " ";
+    node = node->next;
   }
   cout << endl;
 }
+

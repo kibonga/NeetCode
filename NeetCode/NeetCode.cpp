@@ -8,9 +8,11 @@
 int main() {
   LRUCache *lru = new LRUCache(2);
   lru->put(1, 1);
+  lru->display();
   lru->put(2, 2);
   lru->display();
   cout << "Return  = " << lru->get(1) << endl;
+  lru->display();
   lru->put(3, 3);
   lru->display();
 }
