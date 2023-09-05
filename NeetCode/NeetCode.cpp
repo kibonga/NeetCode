@@ -2,10 +2,23 @@
 //
 
 #include <iostream>
+#include "Remove_duplicates_from_sorted_list.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  ListNode* n1 = new ListNode(1);
+  ListNode* n11 = new ListNode(1);
+  ListNode* n2 = new ListNode(2);
+  ListNode* n3 = new ListNode(3);
+  ListNode* n33 = new ListNode(3);
+
+  n1->next = n11;
+  n11->next = n2;
+  n2->next = n3;
+  n3->next = n33;
+
+  ListNode* result = remove_duplicates(n1);
+  display(result);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
