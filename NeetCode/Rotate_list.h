@@ -18,32 +18,25 @@ ListNode* rotate(ListNode* head, int k) {
     tail = curr;
     curr = curr->next;
   }
+  int mod = k % size;
   int n;
   if(k < 0) {
-    n = (-(k % size)) - 1;
+    n = (-mod) - 1;
   }else {
-    n = size - (k % size) - 1;
+    n = size - mod - 1;
   }
   curr = head;
   for(int i=0; i<n; i++) {
     curr = curr->next;
   }
 
-  if(k < 0) {
-    tail->next = head;
-    head = curr->next;
-    curr->next = nullptr;
-  }
-  else {
-    tail->next = head;
-    head = curr->next;
-    curr->next = nullptr;
-    tail = curr;
-  }
+  tail->next = head;
+  head = curr->next;
+  curr->next = nullptr;
+  tail = curr;
 
   return head;
 }
-
 
 
 void display(ListNode* head) {
