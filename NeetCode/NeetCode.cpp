@@ -2,10 +2,35 @@
 //
 
 #include <iostream>
+#include "Balance_binary_tree.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TreeNode* tn4 = new TreeNode(4, nullptr, nullptr);
+  TreeNode* tn44 = new TreeNode(4, nullptr, nullptr);
+
+  TreeNode* tn3 = new TreeNode(3, tn4, tn44);
+  TreeNode* tn33 = new TreeNode(3, nullptr, nullptr);
+
+  TreeNode* tn2 = new TreeNode(2, tn3, tn33);
+
+  TreeNode* tn22 = new TreeNode(2, nullptr, nullptr);
+
+  TreeNode* tn1 = new TreeNode(1, tn2, tn22);
+
+  bool res = is_tree_balanced(tn1);
+   
+  // TreeNode* tn7 = new TreeNode(7, nullptr, nullptr);
+  // TreeNode* tn15 = new TreeNode(15, nullptr, nullptr);
+  //
+  // TreeNode* tn20 = new TreeNode(20, tn7, tn15);
+  //
+  // TreeNode* tn9 = new TreeNode(9, nullptr, nullptr);
+  //
+  // TreeNode* tn3 = new TreeNode(3, tn9, tn20);
+  //
+  // bool res = is_tree_balanced(tn3);
+  std::cout << "Is balanced = " << res << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
