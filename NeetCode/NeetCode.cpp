@@ -2,10 +2,20 @@
 //
 
 #include <iostream>
+#include "Maximum_depth_of_binary_tree.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TreeNode* tn15 = new TreeNode(15, nullptr, nullptr);
+  TreeNode* tn7 = new TreeNode(7, nullptr, nullptr);
+
+  TreeNode* tn9 = new TreeNode(9, nullptr, nullptr);
+  TreeNode* tn20 = new TreeNode(20, tn15, tn7);
+
+  TreeNode* tn3 = new TreeNode(3, tn9, tn20);
+
+  int res = max_depth(tn3);
+  cout << "Max depth = " << res << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
