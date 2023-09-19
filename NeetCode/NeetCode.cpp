@@ -2,10 +2,27 @@
 //
 
 #include <iostream>
+#include "Subtree_of_another_tree.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TreeNode* tn0 = new TreeNode(0, nullptr, nullptr);
+
+  TreeNode* tn1 = new TreeNode(1, nullptr, nullptr);
+  TreeNode* tn2 = new TreeNode(2, tn0, nullptr);
+  
+  TreeNode* tn4 = new TreeNode(4, tn1, tn2);
+  TreeNode* tn5 = new TreeNode(5, nullptr, nullptr);
+
+  TreeNode* tn3 = new TreeNode(3, tn4, tn5);
+
+  TreeNode* stn1 = new TreeNode(1, nullptr, nullptr);
+  TreeNode* stn2 = new TreeNode(2, nullptr, nullptr);
+  
+  TreeNode* stn4 = new TreeNode(4, stn1, stn2);
+  
+  bool res = is_subtree(tn3, stn4);
+  std::cout << "Result = " << res << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
