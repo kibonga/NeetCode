@@ -2,10 +2,25 @@
 //
 
 #include <iostream>
+#include "Right_side_view.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  // TreeNode* tn5 = new TreeNode(5, nullptr, nullptr);
+  // TreeNode* tn4 = new TreeNode(4, nullptr, nullptr);
+  //
+  // TreeNode* tn3 = new TreeNode(3, nullptr, tn4);
+  // TreeNode* tn2 = new TreeNode(2, nullptr, tn5);
+  //
+  // TreeNode* tn1 = new TreeNode(1, tn2, tn3);
+
+  TreeNode* tn5 = new TreeNode(5, nullptr, nullptr);
+  TreeNode* tn2 = new TreeNode(2, tn5, nullptr);
+
+  TreeNode* tn3 = new TreeNode(3, nullptr, nullptr);
+  TreeNode* tn1 = new TreeNode(1, tn2, tn3);
+ 
+  right_side_view(tn1);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
