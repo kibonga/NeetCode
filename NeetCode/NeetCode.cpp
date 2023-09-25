@@ -1,11 +1,26 @@
 // NeetCode.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <cstddef>
 #include <iostream>
+#include "Validate_bst.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  // TreeNode* tn3 = new TreeNode(3, nullptr, nullptr);
+  // TreeNode* tn6 = new TreeNode(6, nullptr, nullptr);
+  // TreeNode* tn1 = new TreeNode(1, nullptr, nullptr);
+  // TreeNode* tn4 = new TreeNode(4, tn3, tn6);
+  // TreeNode* tn5 = new TreeNode(5, tn1, tn4);
+
+  TreeNode* tn3 = new TreeNode(3, nullptr, nullptr);
+  TreeNode* tn7 = new TreeNode(7, nullptr, nullptr);
+  TreeNode* tn1 = new TreeNode(1, nullptr, nullptr);
+  TreeNode* tn6 = new TreeNode(6, tn3, tn7);
+  TreeNode* tn5 = new TreeNode(5, tn1, tn6);
+
+  bool res = is_valid_bst(tn5);
+  cout << "Valid = " << res << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
