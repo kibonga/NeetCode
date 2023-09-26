@@ -2,10 +2,26 @@
 //
 
 #include <iostream>
+#include "Lowest_common_ancestor.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TreeNode* tn3 = new TreeNode(3, nullptr, nullptr);
+  TreeNode* tn5 = new TreeNode(5, nullptr, nullptr);
+
+  TreeNode* tn0 = new TreeNode(0, nullptr, nullptr);
+  TreeNode* tn4 = new TreeNode(4, tn3, tn5);
+  TreeNode* tn7 = new TreeNode(7, nullptr, nullptr);
+  TreeNode* tn9 = new TreeNode(9, nullptr, nullptr);
+
+  TreeNode* tn2 = new TreeNode(2, tn0, tn4);
+  TreeNode* tn8 = new TreeNode(8, tn7, tn9);
+
+  TreeNode* tn6 = new TreeNode(6, tn2, tn8);
+
+  TreeNode* result = lowest_common_ancestor(tn6, tn0, tn5);
+  cout << "Lowest common ancestor = " << result->val << endl;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
