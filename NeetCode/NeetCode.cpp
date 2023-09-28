@@ -2,10 +2,21 @@
 //
 
 #include <iostream>
+#include "Kth_smallest_elemen_in_BST.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TreeNode* tn1 = new TreeNode(1, nullptr, nullptr);
+  TreeNode* tn2 = new TreeNode(2, tn1, nullptr);
+  TreeNode* tn4 = new TreeNode(4, nullptr, nullptr);
+  TreeNode* tn3 = new TreeNode(3, tn2, tn4);
+  TreeNode* tn6 = new TreeNode(6, nullptr, nullptr);
+  TreeNode* tn5 = new TreeNode(5, tn3, tn6);
+
+  int k = 4;
+  int result = kth_smallest(tn5, k);
+
+  cout << "Kth smallest = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
