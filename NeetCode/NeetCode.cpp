@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Construct_binary_tree_from_preorder_and_inorder_traversal.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<int> pre {3, 9, 20, 15, 7};
+  vector<int> in {9, 3, 15, 20, 7};
+
+  TreeNode* root = build_tree(pre, in);
+
+  cout << "Tree = ";
+  preorder(root);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
