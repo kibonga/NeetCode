@@ -2,10 +2,25 @@
 //
 
 #include <iostream>
+#include "Binary_tree_maximum_path_sum.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  // TreeNode* tn15 = new TreeNode(15, nullptr, nullptr);
+  // TreeNode* tn7 = new TreeNode(7, nullptr, nullptr);
+  // TreeNode* tn20 = new TreeNode(20, tn15, tn7);
+  // TreeNode* tn9 = new TreeNode(9, nullptr, nullptr);
+  // TreeNode* tn_10 = new TreeNode(-10, tn9, tn20);
+  //
+  // int result = max_path_sum(tn_10);
+  
+  TreeNode* tn2 = new TreeNode(2, nullptr, nullptr);
+  TreeNode* tn3 = new TreeNode(3, nullptr, nullptr);
+  TreeNode* tn1 = new TreeNode(1, tn2, tn3);
+
+  int result = max_path_sum(tn1);
+  cout << "Max path sum = ";
+  cout << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
