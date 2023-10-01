@@ -2,10 +2,24 @@
 //
 
 #include <iostream>
+#include "Serialize_and_deserialize_binary_tree.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TreeNode* tn4 = new TreeNode(4, nullptr, nullptr);
+  TreeNode* tn5 = new TreeNode(5, nullptr, nullptr);
+  TreeNode* tn2 = new TreeNode(2, nullptr, nullptr);
+  TreeNode* tn3 = new TreeNode(3, tn4, tn5);
+  TreeNode* tn1 = new TreeNode(1, tn2, tn3);
+
+  string str = serialize(tn1);
+  cout << "Result = ";
+  cout << str << endl;
+
+  TreeNode* root = deserialize(str);
+  cout << "Tree = ";
+  preorder(root);
+  cout << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
