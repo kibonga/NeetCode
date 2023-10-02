@@ -2,10 +2,22 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Kth_largest_element_in_a_stream.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  int k = 3;
+  vector<int> vec = vector<int> {4, 5, 8, 2};
+  KthLargest* kth = new KthLargest(k, vec);
+
+  add(kth, 3);
+  add(kth, 5);
+  add(kth, 10);
+  add(kth, 9);
+  int result = add(kth, 4);
+
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
