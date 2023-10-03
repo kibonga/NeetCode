@@ -2,10 +2,31 @@
 //
 
 #include <iostream>
+#include "K_closest_points_to_origin.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  // vector<vector<int>> points = {
+  //   {1, 3},
+  //   {-2, 2},
+  // };
+  vector<vector<int>> points = {
+    {3, 3},
+    {5, -1},
+    {-2, 4}
+  };
+
+  // int k = 1;
+  int k = 2;
+  vector<vector<int>> result = k_closest(points, k);
+
+  for(auto vec : result) {
+    cout << "Points = ";
+    for(auto v : vec) {
+      cout << v << " ";
+    }
+    cout << endl;
+  };
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
