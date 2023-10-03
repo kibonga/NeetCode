@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Last_stone_weight.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<int> stones {2, 7, 4, 1, 8, 1};
+  int result = last_stone_weight(stones);
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
