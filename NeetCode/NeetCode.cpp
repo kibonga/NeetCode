@@ -2,10 +2,15 @@
 //
 
 #include <iostream>
+#include "Kth_largest_element_in_an_array.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  // vector<int> nums {3, 2, 3, 1, 2, 4, 5, 5, 6};
+  vector<int> nums {3, 2, 1, 5, 6, 4};
+  int k = 2;
+  int result = find_kth_largest(nums, k);
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
