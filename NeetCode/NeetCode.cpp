@@ -2,10 +2,17 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Task_scheduler.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<char> tasks {'A', 'A', 'A', 'B', 'B', 'B'};
+  int n = 2;
+
+  int result = least_interval(tasks, n);
+
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
