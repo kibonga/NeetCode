@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include "Implement_trie.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TrieNode* trie = new TrieNode();
+  string word = "apple";
+  insert(trie, word);
+  cout << "Search 'Apple' = " << search(trie, word) << endl;
+  string word2 = "app";
+  cout << "Search 'App' = " << search(trie, word2) << endl;
+  cout << "Starts with 'App' = " << starts_with(trie, word2) << endl;
+  insert(trie, word2);
+  cout << "Search 'App' = " << search(trie, word2) << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
