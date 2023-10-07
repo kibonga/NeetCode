@@ -2,10 +2,35 @@
 //
 
 #include <iostream>
+#include "Design_add_and_search_words_data_structure.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TrieNode* trie = new TrieNode(); 
+  string word1 = "bad";
+  string word2 = "dad";
+  string word3 = "mad";
+  add(trie, word1);
+  add(trie, word2);
+  add(trie, word3);
+
+  string search_word1 = "pad";
+  string search_word2 = "bad";
+  string search_word3 = ".ad";
+  string search_word4 = "b..";
+  string search_word5 = "b.d";
+
+  int search1 = search(trie, search_word1);
+  int search2 = search(trie, search_word2);
+  int search3 = search(trie, search_word2);
+  int search4 = search(trie, search_word3);
+  int search5 = search(trie, search_word5);
+
+  cout << "Search 'pad' = " << search1 << endl;
+  cout << "Search 'bad' = " << search2 << endl;
+  cout << "Search '.ad' = " << search3 << endl;
+  cout << "Search 'b..' = " << search4 << endl;
+  cout << "Search 'b.d' = " << search5 << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
