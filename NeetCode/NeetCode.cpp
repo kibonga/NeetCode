@@ -2,10 +2,32 @@
 //
 
 #include <iostream>
+#include "Word_search.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<vector<char>> board {
+    {'o', 'a', 'a', 'n'},
+    {'e', 't', 'a', 'e'},
+    {'i', 'h', 'k', 'r'},
+    {'i', 'f', 'l', 'k'},
+  };
+
+  vector<string> words {
+    "oath",
+    "pea",
+    "eat",
+    "rain"
+  };
+
+  vector<string> result = find_words(board, words);
+    
+  cout << "Result" << endl;
+
+  for(auto& word : result) {
+    cout << "   - " << word << endl;
+  }
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
