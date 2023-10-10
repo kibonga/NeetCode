@@ -2,10 +2,52 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Design_twitter.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  Twitter* twitter = new Twitter();
+
+  int user1 = add_user(twitter);
+  int user2 = add_user(twitter);
+  int user3 = add_user(twitter);
+  int user4 = add_user(twitter);
+   
+  // User1
+  follow(twitter, user1, 2);
+  follow(twitter, user1, 3);
+  follow(twitter, user1, 4);
+
+  // User2 
+  follow(twitter, user2, 1);
+  follow(twitter, user2, 4);
+
+  // User3
+  follow(twitter, user3, 1);
+  follow(twitter, user3, 2);
+
+  // User4 
+  follow(twitter, user4, 1);
+  follow(twitter, user4, 3);
+
+  postTweet(twitter, user1);  
+  postTweet(twitter, user1);  
+  postTweet(twitter, user3);  
+  postTweet(twitter, user2);  
+  postTweet(twitter, user2);  
+  postTweet(twitter, user4);  
+  postTweet(twitter, user4);  
+
+  vector<int> feed;
+  getNewsFeed(twitter, user1, feed);
+
+  cout << "Tweet ids = ";
+  for(auto& f : feed) {
+    cout << f << " "; 
+  }
+  cout << endl;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
