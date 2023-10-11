@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Single_number.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<int> nums {4, 2, 1, 2, 4, 6, 1};
+  int result = single_number(nums);
+  cout << "Single number = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
