@@ -2,10 +2,20 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Counting_bits.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  int n = 5;
+  vector<int> result = vector<int>(n+1, 0);
+  
+  count_bits(n, result);
+
+  cout << "Result " << endl;
+  for(int r : result) {
+    cout << r << endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
