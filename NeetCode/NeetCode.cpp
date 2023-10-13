@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Number_of_1_bits.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  int n = 15;
+  int result = hamming_weight(n);
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
