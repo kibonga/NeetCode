@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Missing_number.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<int> nums {3, 0, 1};
+  int result = missing_number(nums);
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
