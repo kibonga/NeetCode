@@ -2,10 +2,15 @@
 //
 
 #include <iostream>
+#include "Sum_of_two_integers.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  int a = 2;
+  int b = 3;
+
+  int result = get_sum(a, b);
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
