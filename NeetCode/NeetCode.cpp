@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Reverse_integer.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  int x = 123;
+  int result = reverse_integer(x);
+  cout << "Result = " << result << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
