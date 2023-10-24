@@ -1,11 +1,26 @@
 // NeetCode.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <cmath>
 #include <iostream>
+#include <vector>
+#include "Subsets.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<int> nums {1, 2, 3};
+  vector<vector<int>> result;
+
+  subsets(nums, result);
+
+  cout << "Result" << endl;
+  for(auto vec : result) {
+    cout << "[ ";
+    for(auto v: vec) {
+      cout << v << ", ";
+    }
+    cout << " ]" << endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
