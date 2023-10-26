@@ -1,11 +1,25 @@
 // NeetCode.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <cstdio>
 #include <iostream>
+#include <vector>
+#include "Permutations.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<vector<int>> result;
+  vector<int> nums = {1, 2, 3};
+
+  permute(nums, result);
+
+  for(auto vec : result) {
+    cout << "[ ";
+    for(auto v : vec) {
+      cout << v << " ";
+    }
+    cout << " ]";
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
