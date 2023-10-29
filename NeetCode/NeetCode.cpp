@@ -2,10 +2,24 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Combination-sum.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<vector<int>> result;
+  vector<int> nums {2, 3, 6, 7};
+  int target = 7;
+
+  combination_sum(nums, result, target);
+
+  for(auto res : result) {
+    cout << "[ ";
+    for(auto r : res) {
+      cout << r << " ";
+    }
+    cout << " ]" << endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
