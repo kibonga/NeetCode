@@ -2,10 +2,29 @@
 //
 
 #include <iostream>
+#include "Subsets-II.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<vector<int>> result;
+  vector<int> nums {1, 2, 2};
+
+  subsets(nums, result);
+
+  for(auto res : result) {
+
+    if(!res.size()) {
+      continue;
+    }
+
+    cout << "[ ";
+
+    for(auto r : res) {
+      cout << r << " ";
+    }
+
+    cout << " ]" << endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
