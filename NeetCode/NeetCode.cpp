@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include "Same_tree.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  TreeNode* l2 = new TreeNode(2, nullptr, nullptr);
+  TreeNode* l3 = new TreeNode(3, nullptr, nullptr);
+  TreeNode* l1 = new TreeNode(1, l2, l3);
+
+  TreeNode* r2 = new TreeNode(2, nullptr, nullptr);
+  TreeNode* r3 = new TreeNode(3, nullptr, nullptr);
+  TreeNode* r1 = new TreeNode(1, r2, r3);
+
+  cout << "Result = " << is_same_tree(l1, r1) << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
