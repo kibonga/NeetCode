@@ -2,10 +2,25 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Subsets-II.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<int> nums {2, 2, 1};
+  vector<vector<int>> result;
+
+  unique_subsets(nums, result);
+
+  cout << "Result = " << endl;
+  for(auto res : result) {
+    cout << "[";
+    for(auto r : res) {
+      cout << r << " ";
+    }
+    cout << " ]" << endl;
+  }
+  cout << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
