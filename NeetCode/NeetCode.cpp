@@ -2,10 +2,25 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Combination_sum_II.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<int> candidates {10, 1, 2, 7, 6, 1, 5};
+  vector<vector<int>> result;
+  int target = 8;
+
+  combination_sum(result, candidates, target);
+
+  cout << "Result" << endl;
+  for(auto res : result) {
+    cout << "[";
+    for(auto r : res) {
+      cout << r << " ";
+    }
+    cout << "]" << endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
