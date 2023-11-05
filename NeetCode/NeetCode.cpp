@@ -2,10 +2,25 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Word_search.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  vector<vector<char>> board {
+    {'A', 'B', 'C', 'E'},
+    {'S', 'F', 'C', 'S'},
+    {'A', 'D', 'E', 'E'},
+  };
+
+  string word = "ABCCED";
+
+  bool result1 = word_search(board, word);
+  bool result2 = word_search2(board, word);
+
+  cout << "Word search 1 = " << result1 << endl;
+  cout << "Word search 2 = " << result2 << endl;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
