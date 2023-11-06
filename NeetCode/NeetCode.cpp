@@ -1,11 +1,25 @@
 // NeetCode.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <algorithm>
 #include <iostream>
+#include <vector>
+#include "Palindrome_partitioning.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  string str = "aab";
+  vector<vector<string>> result;
+
+  partition(result, str); 
+
+  for(auto res : result) {
+    cout << " [ ";
+    for(auto r : res) {
+      cout << r << "";
+    }
+    cout << endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
